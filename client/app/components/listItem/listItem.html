@@ -1,13 +1,13 @@
 <li class="list-group-item">
     <div class="checkbox">
-        <input type="checkbox" id="checkbox2" />
         <label for="checkbox2">
-            List group item heading 1
+            {{ $ctrl.value }} || {{ $ctrl.index }}
         </label>
     </div>
    <div class="pull-right action-buttons">
         <a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a href="http://www.jquery2dotnet.com" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+        <button ng-click="$ctrl.deleteItem()">sad</button>
+        <div data-ng-click=""><span class="glyphicon glyphicon-trash"></span></div>
         <a href="http://www.jquery2dotnet.com" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
     </div>
 </li>

@@ -1,8 +1,9 @@
-import angular      from 'angular';
-import uiRouter     from 'angular-ui-router';
-//import Components   from './components/components';
-import AppComponent from './app.component';
-import MyAppRouter  from './router';
+import angular         from 'angular';
+import uiRouter        from 'angular-ui-router';
+import Components      from './components/components';
+import AppComponent    from './app.component';
+import MyAppRouter     from './router';
+import ExpensesService from './services/ExpensesService.js';
 import 'normalize.css';
 
 import List from './components/list/list';
@@ -10,7 +11,8 @@ import List from './components/list/list';
 angular.module('app', [
     uiRouter,
     MyAppRouter.name,
-    List.name
+    Components.name,
+    ExpensesService.name
   ])
   .config(($locationProvider) => {
     "ngInject";

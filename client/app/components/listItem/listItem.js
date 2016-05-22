@@ -1,12 +1,18 @@
-import angular  from 'angular';
-import template from './listItem.html';
+import angular    from 'angular';
+import template   from './listItem.html';
+import controller from './ListItemController';
 
 const listModule = angular.module('listItem', [
 ])
-.component('list', {
+.component('listItem', {
     restrict: 'E',
-    bindings: {},
-    template
+    bindings: {
+      item : '<',
+      index: '<',
+      deleteItem: '&'
+    },
+    template,
+    controller
 } );
 
 export default listModule;

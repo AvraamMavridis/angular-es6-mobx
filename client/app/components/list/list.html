@@ -1,5 +1,5 @@
 <div class="container">
-    {{ listController.name }}
+    <button ng-click="listController.addItem()">Add Item</button>
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-primary">
@@ -20,25 +20,17 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-group">
-                      <list-item ng-repeat="item in $ctrl.list" item="item"></list-item>
+                      <list-item ng-repeat="item in listController.list"
+                                 item="item"
+                                 delete-item="listController.deleteItem(item, $index)"
+                                 index="$index"></list-item>
                     </ul>
                 </div>
                 <div class="panel-footer">
                     <div class="row">
                         <div class="col-md-6">
                             <h6>
-                                Total Count <span class="label label-info">25</span></h6>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="pagination pagination-sm pull-right">
-                                <li class="disabled"><a href="javascript:void(0)">«</a></li>
-                                <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
-                                <li><a href="http://www.jquery2dotnet.com">2</a></li>
-                                <li><a href="http://www.jquery2dotnet.com">3</a></li>
-                                <li><a href="http://www.jquery2dotnet.com">4</a></li>
-                                <li><a href="http://www.jquery2dotnet.com">5</a></li>
-                                <li><a href="javascript:void(0)">»</a></li>
-                            </ul>
+                                Total Count <span class="label label-info">{{ listController.listCounter }}</span></h6>
                         </div>
                     </div>
                 </div>
